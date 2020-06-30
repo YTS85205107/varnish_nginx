@@ -1,0 +1,11 @@
+image: docker:stable
+
+before_script:
+    - docker info
+    
+Test-site:
+    stage: build
+    script:
+    #tsfoto
+    - docker build -t dockerhubken.12.com/varnish_nginx dockerfile/
+    - docker push dockerhubken.12.com/varnish_nginx 
